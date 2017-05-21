@@ -9,7 +9,7 @@ class Agent(models.Model):
     pos_longitude = models.FloatField(null=True)
     pos_speed = models.FloatField(null=True)
     pos_bearing = models.FloatField(null=True)
-    pos_pos_timestamp = models.DateTimeField(null=True)
+    pos_timestamp = models.DateTimeField(null=True)
     device = models.OneToOneField(FCMDevice, null=True, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -3,3 +3,4 @@ djangorestframework
 social-auth-app-django
 fcm-django
 django-guardian
+uwsgi; sys_platform == 'linux'

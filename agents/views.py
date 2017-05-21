@@ -39,7 +39,9 @@ class API(ViewSet):
             return Response({
                 'timestamp': agent.pos_timestamp,
                 'longitude': agent.pos_longitude,
-                'latitude': agent.pos_latitude})
+                'latitude': agent.pos_latitude,
+                'speed': agent.pos_speed,
+                'bearing': agent.pos_bearing})
         elif request.method == 'POST':
             try:
                 long = float(request.data.get('longitude'))
@@ -77,5 +79,5 @@ class API(ViewSet):
                     newuser.save()
                 return Response(user.username)
         except Exception as e:
-            return Response(status=HttpResponseBadRequest.status_code, data=e.args)
+            return Response(status=status.HTTP_400_BAD_REQUEST, data=e.args)
 
