@@ -64,6 +64,13 @@ class API(ViewSet):
                              'speed': agent.pos_speed,
                              'bearing': agent.pos_bearing})
 
+
+
+    @permission_classes(IsAuthenticated,)
+    def base_location(self, request):
+        return Response({'latitude': 41.833004, 'longitude': -8.420947});
+
+
     @staticmethod
     @psa('social:complete')
     def __register_impl__(request, backend):

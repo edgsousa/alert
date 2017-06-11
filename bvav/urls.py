@@ -24,10 +24,11 @@ router.register('server', api.views.ServerStatus, base_name='server')
 router.register('agents', agents.views.API, base_name='agents')
 
 urlpatterns = [
-    url(r'^app/', include([
-	    url(r'^admin/', admin.site.urls),
-	    url(r'^api/', include(router.urls)),
-	    url(r'', include('social_django.urls', namespace='social')),
-	    url(r'^', include('agents.urls'))
-	])),
+    url(r'^app/',
+        include([
+            url(r'^admin/', admin.site.urls),
+            url(r'^api/', include(router.urls)),
+            url(r'', include('social_django.urls', namespace='social')),
+            url(r'^', include('bvavsmsalert.urls'))
+        ])),
 ]
