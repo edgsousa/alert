@@ -28,6 +28,7 @@ urlpatterns = [
         include([
             url(r'^admin/', admin.site.urls),
             url(r'^api/', include(router.urls)),
+            url(r'^api/', include('agents.urls')),
             url(r'', include('social_django.urls', namespace='social')),
             url(r'^', include('bvavsmsalert.urls'))
         ])),
